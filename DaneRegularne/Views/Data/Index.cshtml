@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model DataModel
+<div class="text-center">
+    <h1 class="display-4">Wypełnij formularz zgłoszeniowy.</h1>
+
+    <Form asp-action="Form" method="post">
+        <div>
+            <label asp-for="Imie">Podaj swoje imię</label>
+            <input asp-for="Imie" />
+        </div>
+        <div>
+            <label asp-for="Nazwisko">Podaj swoje nazwisko</label>
+            <input asp-for="Nazwisko" />
+        </div>
+        <div>
+            <label asp-for="Email">Podaj swój adres mailowy</label>
+            <input asp-for="Email" />
+        </div>
+        <div>
+            <label asp-for="Tresc">Treść zgłoszenia</label>
+            <br />
+            <input asp-for="Tresc" />
+        </div>
+        <input type="submit">
+    </Form>
+    
+</div>
