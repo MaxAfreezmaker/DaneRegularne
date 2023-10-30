@@ -20,9 +20,9 @@ namespace DaneRegularne.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View("Wynik", dane);
+                return RedirectToAction("Wynik", dane);
             }
-            else return View();
+             return View();
 
         }
         public IActionResult Wynik(DataModel dane)

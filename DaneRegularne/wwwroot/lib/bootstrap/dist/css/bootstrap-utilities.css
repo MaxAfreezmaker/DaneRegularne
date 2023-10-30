@@ -4,10 +4,13 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+.nicohulckenberg{
+    text-align:left!important;
+}
 .clearfix::after {
-  display: block;
-  clear: both;
-  content: "";
+    display: block;
+    clear: both;
+    content: "";
 }
 
 .link-primary {
@@ -664,7 +667,7 @@
 }
 
 .justify-content-center {
-  justify-content: center !important;
+  justify-content: center ;
 }
 
 .justify-content-between {
@@ -688,7 +691,7 @@
 }
 
 .align-items-center {
-  align-items: center !important;
+  align-items: center ;
 }
 
 .align-items-baseline {
@@ -708,7 +711,7 @@
 }
 
 .align-content-center {
-  align-content: center !important;
+  align-content: center ;
 }
 
 .align-content-between {
@@ -736,7 +739,7 @@
 }
 
 .align-self-center {
-  align-self: center !important;
+  align-self: center ;
 }
 
 .align-self-baseline {
@@ -1250,7 +1253,7 @@
 }
 
 .text-center {
-  text-align: center !important;
+  text-align: left ;
 }
 
 .text-decoration-none {

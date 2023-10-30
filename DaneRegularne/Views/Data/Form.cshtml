@@ -1,32 +1,61 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
+<link rel="stylesheet" href="" asp-append-version="true" />
+
 @model DataModel
-<div class="text-center">
-    <h1 class="display-4">Wypełnij formularz zgłoszeniowy.</h1>
 
-    <Form asp-action="Form" method="post">
-        <div >
-            <label asp-for="Imie">Podaj swoje imię</label>
-            <input asp-for="Imie" />
-        </div>
-        <div >
-            <label asp-for="Nazwisko">Podaj swoje nazwisko</label>
-            <input asp-for="Nazwisko" />
-        </div>
-        <div >
-            <label asp-for="Email">Podaj swój adres mailowy</label>
-            <input asp-for="Email" />
-        </div>
-        <div >
-            <label asp-for="Tresc">Treść zgłoszenia</label>
-            <br />
-            <input asp-for="Tresc" />
-        </div>
-        <div asp-validation-summary="All">
-            Popraw Formularz o podane błędy
-        </div>
-        <input type="submit">
-    </Form>
+<h1 class="display-4">Wypełnij formularz zgłoszeniowy.</h1>
 
+<div class="nicohulckenberg" style="text-align:left!important;">
+    <form asp-action="Form" method="post">
+        <div>
+            <label asp-for="Imie">Imię (wymagane, minimum 2 znaki)</label><br />
+            <input asp-for="Imie" /><br />
+            <span asp-validation-for="Imie" class="text-danger"></span><br />
+        </div>
+        <div>
+            <label asp-for="Nazwisko">Nazwisko (wymagane, minimum 2 znaki)</label><br />
+            <input asp-for="Nazwisko" /><br />
+            <span asp-validation-for="Nazwisko" class="text-danger"></span><br />
+        </div>
+        <div>
+            <label asp-for="Email">Adres e-mail (wymagane, poprawny adres e-mail)</label><br />
+            <input asp-for="Email" /><br />
+            <span asp-validation-for="Email" class="text-danger"></span><br />
+        </div>
+        <div>
+            <label asp-for="Haslo">Hasło (wymagane, minimum 8 znaków, co najmniej jedna cyfra, jedna duża litera i jedna mała litera)</label><br />
+            <input asp-for="Haslo" type="password" /><br />
+            <span asp-validation-for="Haslo" class="text-danger"></span><br />
+        </div>
+        <div>
+            <label asp-for="PotwierdzenieHasla">Potwierdzenie hasła (wymagane, musi być takie samo jak pole hasło)</label><br />
+            <input asp-for="PotwierdzenieHasla" type="password" /><br />
+            <span asp-validation-for="PotwierdzenieHasla" class="text-danger"></span><br />
+        </div>
+        <div>
+            <label asp-for="NrTelefonu">Nr telefonu (odpowiedni typ)</label><br />
+            <input asp-for="NrTelefonu" /><br />
+            <span asp-validation-for="NrTelefonu" class="text-danger"></span><br />
+        </div>
+        <div>
+            <label asp-for="Wiek">Wiek (powyżej 10 lat do 80 lat)</label><br />
+            <input asp-for="Wiek" type="number" /><br />
+            <span asp-validation-for="Wiek" class="text-danger"></span><br />
+        </div>
+        <div>
+            <label asp-for="Miasto">Miasto (wybór z 5 propozycji)</label><br />
+            <select asp-for="Miasto"><br />
+                <option value="Miasto1">Kraków</option>
+                <option value="Miasto2">Warszawa</option>
+                <option value="Miasto3">Wrocław</option>
+                <option value="Miasto4">Poznań</option>
+                <option value="Miasto5">Katowice</option>
+            </select><br />
+            <span asp-validation-for="Miasto" class="text-danger"></span><br />
+        </div>
+        <input type="submit" value="Wyślij" />
+    </form>
 </div>
