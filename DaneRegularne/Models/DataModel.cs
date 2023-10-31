@@ -16,15 +16,6 @@ namespace DaneRegularne.Models
         [RegularExpression(".+\\@.+\\.[a-z]{2,3}", ErrorMessage = "Podany adres e-mail jest nieprawidłowy.")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Proszę podać temat.")]
-        public string Temat { get; set; }
-
-        [Required(ErrorMessage = "Proszę podać treść wiadomości.")]
-        [MinLength(10, ErrorMessage = "Treść wiadomości musi składać się z co najmniej 10 znaków.")]
-        [MaxLength(50, ErrorMessage = "Treść wiadomości nie może przekraczać 50 znaków.")]
-
-        public string Tresc { get; set; }
-
         [Required(ErrorMessage = "Proszę podać hasło.")]
         [MinLength(8, ErrorMessage = "Hasło musi składać się z co najmniej 8 znaków.")]
         [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).+$", ErrorMessage = "Hasło musi zawierać co najmniej jedną dużą literę, jedną małą literę i jedną cyfrę.")]

@@ -22,6 +22,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Data}/{action=Index}");
+    pattern: "{controller=Data}/{action=Form}/{id?}");
+
 
 app.Run();

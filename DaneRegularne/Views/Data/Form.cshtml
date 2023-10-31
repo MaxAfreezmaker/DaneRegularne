@@ -1,15 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Form page";
 }
 
-<link rel="stylesheet" href="" asp-append-version="true" />
+
 
 @model DataModel
 
 <h1 class="display-4">Wypełnij formularz zgłoszeniowy.</h1>
 
-<div class="nicohulckenberg" style="text-align:left!important;">
-    <form asp-action="Form" method="post">
+
+    <form asp-action="Form" method="post" name="clear">
         <div>
             <label asp-for="Imie">Imię (wymagane, minimum 2 znaki)</label><br />
             <input asp-for="Imie" /><br />
@@ -48,14 +48,22 @@
         <div>
             <label asp-for="Miasto">Miasto (wybór z 5 propozycji)</label><br />
             <select asp-for="Miasto"><br />
-                <option value="Miasto1">Kraków</option>
-                <option value="Miasto2">Warszawa</option>
-                <option value="Miasto3">Wrocław</option>
-                <option value="Miasto4">Poznań</option>
-                <option value="Miasto5">Katowice</option>
+            <option value="Kraków">Kraków</option>
+            <option value="Warszawa">Warszawa</option>
+            <option value="Wrocław">Wrocław</option>
+            <option value="Poznań">Poznań</option>
+            <option value="Katowice">Katowice</option>
             </select><br />
             <span asp-validation-for="Miasto" class="text-danger"></span><br />
         </div>
         <input type="submit" value="Wyślij" />
+    <input type="button" value="Wyczyść" onclick="clearForm()" />
     </form>
-</div>
+<script>
+    function clearForm() {
+        var form = document.querySelector('form');
+        if (form) {
+            form.reset();
+        }
+    }
+</script>

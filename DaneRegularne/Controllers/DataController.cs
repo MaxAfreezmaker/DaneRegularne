@@ -1,6 +1,6 @@
-﻿using DaneRegularne.Models;
+﻿using AngleSharp.Html.Dom;
+using DaneRegularne.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography.X509Certificates;
 
 namespace DaneRegularne.Controllers
 {
@@ -10,24 +10,36 @@ namespace DaneRegularne.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult Form()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Form(DataModel dane)
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Wynik", dane);
+                // return RedirectToAction("Wynik",dane);
+                 return RedirectToAction("Wynik", dane);
+
             }
-             return View();
+
+            return View("Form");
+
 
         }
+        //ZAQ!2wsx
+
         public IActionResult Wynik(DataModel dane)
         {
-            return View(dane);
+            return View("Wynik", dane);
         }
+        //public IActionResult Formtwo(DataModel dane)
+        //{
+        //    return View("Form",dane);
+        //}
     }
 }

@@ -2,22 +2,33 @@
 @{
     ViewData["Title"] = "Wysłano formularz";
 }
-
+<h1 >
+    Dziękujemy za uzupełnienie formularza
+</h1>
 <h2>Wynik Twojego formularza</h2>
 Zweryfikuj przesłane dane:
 
 <p><strong>Imię:</strong> @Model.Imie</p>
 <p><strong>Nazwisko:</strong> @Model.Nazwisko</p>
 <p><strong>Email:</strong> @Model.Email</p>
-<p><strong>Treść zgłoszenia:</strong></p>
-<div style="width: 200px; border: solid; border-color: red; padding: 10px;">
-    @Model.Tresc
-</div>
 
-
-<p><strong>Hasło:</strong> <span id="password" style="display: none;">@Model.Haslo</span> <button id="showPasswordButton">Pokaż hasło</button></p>
-
+<p>
+    <strong>Hasło:</strong>
+    <span id="password" style="display:none;">@Model.Haslo</span>
+    <button id="showPasswordButton" class="btn btn-link" onclick="togglePassword()">
+        <i class="fas fa-eye" aria-hidden="true"></i>
+    </button>
+</p>
 <p><strong>Numer telefonu:</strong> @Model.NrTelefonu</p>
 <p><strong>Wiek:</strong> @Model.Wiek</p>
 <p><strong>Miasto:</strong> @Model.Miasto</p>
-<p><strong>Hasło:</strong> @Model.Haslo</p>
+<script>
+    document.getElementById('showPasswordButton').addEventListener('click', function () {
+        var passwordSpan = document.getElementById('password');
+        if (passwordSpan.style.display === 'none') {
+            passwordSpan.style.display = 'inline';
+        } else {
+            passwordSpan.style.display = 'none';
+        }
+    });
+</script>
